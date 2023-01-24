@@ -10,6 +10,19 @@ public class GamePiece : MonoBehaviour
 
     private bool isMoving;
 
+    // Mathematical, for more natural movement
+    public InterpolationType interpolation;
+
+    public enum InterpolationType
+    {
+        Linear,
+        EaseOut,
+        EaseIn,
+        SmoothStep,
+        SmootherStep
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,20 +64,45 @@ public class GamePiece : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, destination) < 0.01f)
             {
+
                 reachedDestination = true;
+
+                // Round our position to the final destination on integer values
                 transform.position = destination;
+
+                // Set the xIndex and yIndex of the game piece
                 SetCoordinate((int)destination.x, (int)destination.y);
                 break;
 
             }
 
+            // Track the total running time
             elapsedTime += Time.deltaTime;
 
+            // Calculate the lerp value
             float t = Mathf.Clamp(elapsedTime / movementTime, 0f, 1f);
 
+            // Mathematical for more natural movement
+            switch (interpolation)
+            {
+                case InterpolationType.Linear:
+                    break;
+                case InterpolationType.EaseOut:
+                    t = Mathf.Sin(t * Mathf.PI * 0.5f);
+                    break;
+                case InterpolationType.EaseIn:
+                    t = 1 - Mathf.Cos(t * Mathf.PI * 0.5f);
+                    break;
+                case InterpolationType.SmoothStep:
+                    t = t * t * (3 - 2 * t);
+                    break;
+                case InterpolationType.SmootherStep:
+                    t = t * t * t * (t * (t * 6 - 15) + 10);
+                    break;
+            }
+
+            // Move the game piece
             transform.position = Vector3.Lerp(startPosition, destination, t);
-
-
 
             // Wait until next frame
             yield return null;
