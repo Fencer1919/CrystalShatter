@@ -486,11 +486,15 @@ MonoBehaviour:
   borderSize: 0
   tilePrefab: {fileID: 7864920575397828131, guid: 2e704b5997dca0f4a86305fb16508479, type: 3}
   gamePiecePrefabs:
-  - {fileID: 3097819112901317757, guid: be1f947c214e3df43b9f4e5ea161049e, type: 3}
-  - {fileID: 1819867801291870159, guid: f69282b194017064fb33e6cbec54cfce, type: 3}
-  - {fileID: 7863698587993617027, guid: 754ad1bbafdf35240a813fb2650280ab, type: 3}
-  - {fileID: 5145096622977715771, guid: cf4e7f6b0fb4b9b479fd4a34ee726025, type: 3}
-  - {fileID: 2003512043281250788, guid: 2853d27dfd20f994dbadd137791a4c15, type: 3}
+  - {fileID: 553920619070334338, guid: 2efa39b2bb4c34f42a875e8b12541277, type: 3}
+  - {fileID: 2877072850356280693, guid: 18a125126a949914684b28a6dfbda265, type: 3}
+  - {fileID: 8505532845639084861, guid: c5642cec6d368c44c9a94784dca24759, type: 3}
+  - {fileID: 3858061281121128780, guid: 746e0323f9656c04390eacdbac9169b1, type: 3}
+  - {fileID: 1967310503444156256, guid: 25715a78596abe945b7da01bd4c43562, type: 3}
+  - {fileID: 6803165358057072497, guid: 2b395c966eb4af74e9b813e8620fe31e, type: 3}
+  - {fileID: 6638101094031578137, guid: bb07a95999e56cc42a02d1f22cb37335, type: 3}
+  - {fileID: 4957679966989366542, guid: 54ce79b455371504bbe750f3c251421c, type: 3}
+  - {fileID: 6744359300962572743, guid: 4cdbf52c5e0859b44909b9de0dfd03ff, type: 3}
 --- !u!4 &1829592844
 Transform:
   m_ObjectHideFlags: 0
